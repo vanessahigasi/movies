@@ -32,6 +32,7 @@ public class MovieWebController {
 
         Template template = HandlebarsUtil.compile("movie-list");
         Map<String, Object> values = new HashMap<>();
+        values.put("movies",movieService.getAllMovies());
         return template.apply(values);
     }
 
